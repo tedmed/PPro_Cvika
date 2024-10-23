@@ -1,20 +1,26 @@
 package com.example.projekt.model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class Car {
     private int id = -1;
+
+    @Size(min = 7, max = 7, message = "Idiote")
     private String license;
+
+    @NotBlank
     private String color;
+
+    @Min(value = 30)
+    @Max(value = 100)
     private float tankVolume;
+
+    @Min(value = 2)
+    @Max(value = 10)
     private int numberOfSeats;
-
-    public Car() {}
-
-    public Car(String license, String color, float tankVolume, int numberOfSeats) {
-        this.license = license;
-        this.color = color;
-        this.tankVolume = tankVolume;
-        this.numberOfSeats = numberOfSeats;
-    }
 
     public int getId() {
         return id;
