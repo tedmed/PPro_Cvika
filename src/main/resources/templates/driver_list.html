@@ -5,11 +5,11 @@
     <title>List of Drivers</title>
 </head>
 <body>
-<a th:href="@{'/drivers/create'}">New Car</a><br>
+<a th:href="@{'/drivers/create'}">New Driver</a><br>
 <a th:href="@{'/'}">Back to main page</a>
 <ul>
-    <li th:each="driver, iter: ${drivers}">
-        <a th:href="@{'/drivers/detail/' + ${iter.index}}">
+    <li th:each="driver: ${drivers}">
+        <a th:href="@{'/drivers/detail/' + ${driver.id}}">
             <span th:text="${driver.name}"></span>
         </a>
     </li>

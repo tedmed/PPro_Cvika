@@ -8,8 +8,8 @@
 <a th:href="@{'/cars/create'}">New Car</a><br>
 <a th:href="@{'/'}">Back to main page</a>
 <ul>
-    <li th:each="car, iter: ${cars}">
-        <a th:href="@{'/cars/detail/' + ${iter.index}}">
+    <li th:each="car: ${cars}">
+        <a th:href="@{'/cars/detail/' + ${car.id}}">
             <span th:text="${car.license}"></span>
         </a>
     </li>
